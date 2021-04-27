@@ -1,0 +1,50 @@
+:root {
+	--color-alpha: white;
+	--color-bravo: black;
+	--color-charlie: slateBlue;
+}
+
+body {
+	background: var(--color-alpha);
+	color: var(--color-bravo);
+	font-family: monospace;
+	max-width: 900px;
+}
+
+a {
+	color: var(--color-bravo);
+	text-decoration: none;
+}
+
+a:hover {
+	background-color: var(--color-bravo);
+	color: var(--color-alpha);
+}
+
+a::before {
+	content: "{";
+}
+
+a::after {
+	content: "}";
+}
+
+a[target="_blank"]::before {
+	content: "[";
+}
+
+a[target="_blank"]::after {
+	content: "]";
+}
+
+a:visited::before,
+a:visited::after {
+	color: var(--color-charlie);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-alpha: black;
+		--color-bravo: white;
+	}
+}
