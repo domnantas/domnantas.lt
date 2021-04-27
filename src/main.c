@@ -3,6 +3,7 @@
 int
 main(void)
 {
-	printf("Hello world");
-	return 0;
+	fprintf(stdout, "Hello world\n");
+	fprintf(stderr, "Hello error\n");
+	return 1;
 }

@@ -11,10 +11,10 @@ mkdir ../dist
 cp -a ../public/* ../dist
 
 # Linux(debug)
-cc -std=c89 -DDEBUG -Wall -Wno-unknown-pragmas -Wpedantic -Wshadow -Wuninitialized -Wextra -Werror=implicit-int -Werror=incompatible-pointer-types -Werror=int-conversion -Wvla -g -Og -fsanitize=address -fsanitize=undefined main.c -o main
+# cc -std=c89 -DDEBUG -Wall -Wno-unknown-pragmas -Wpedantic -Wshadow -Wuninitialized -Wextra -Werror=implicit-int -Werror=incompatible-pointer-types -Werror=int-conversion -Wvla -g -Og -fsanitize=address -fsanitize=undefined main.c -o main
 
 # Linux(fast)
-# cc main.c -std=c89 -Os -DNDEBUG -g0 -s -Wall -Wno-unknown-pragmas -o main
+cc main.c -std=c89 -Os -DNDEBUG -g0 -s -Wall -Wno-unknown-pragmas -o main
 
 # RPi
 # tcc -Wall main.c -o main
@@ -27,7 +27,7 @@ cc -std=c89 -DDEBUG -Wall -Wno-unknown-pragmas -Wpedantic -Wshadow -Wuninitializ
 # valgrind ./main
 
 # Build Size
-# echo "$(du -b ./main | cut -f1) bytes written"
+echo "$(du -b ./main | cut -f1) bytes written"
 
 # Run
 ./main
