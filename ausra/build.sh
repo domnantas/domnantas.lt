@@ -1,5 +1,11 @@
 #!/bin/bash
-. $(dirname $0)/getoptions.sh
+AUSRA_DIR=$(
+	cd "$(dirname "$BASH_SOURCE")"
+	cd -P "$(dirname "$(readlink "$BASH_SOURCE" || echo .)")"
+	pwd
+)
+
+. $AUSRA_DIR/getoptions.sh
 
 parser_definition() {
 	prog=${2:?The program name is not set}
@@ -17,14 +23,14 @@ eval "$(getoptions parser_definition parse "$0")"
 parse "$@"
 eval "set -- $REST"
 
-# Lint
+# Format source
 if [ $FORMAT ]; then
-	echo "formatting" *.c
-	clang-format -i *.c
+	echo "formatting source code"
+	clang-format -i $AUSRA_DIR/*.c
 fi
 
 # Cleanup
-rm -f ./main
+rm -f $AUSRA_DIR/main
 rm -rf dist
 mkdir dist
 
@@ -35,33 +41,36 @@ echo "using $COMPILER compiler"
 case $COMPILER in
 gcc)
 	# Linux(fast)
-	cc src/main.c -std=c89 -Os -DNDEBUG -g0 -s -Wall -Wno-unknown-pragmas -o main
+	gcc -std=c89 -Os -DNDEBUG -g0 -s -Wall -Wno-unknown-pragmas $AUSRA_DIR/main.c -o $AUSRA_DIR/main
 	;;
 gcc-debug)
 	# Linux(debug)
-	cc -std=c89 -DDEBUG -Wall -Wno-unknown-pragmas -Wpedantic -Wshadow -Wuninitialized -Wextra -Werror=implicit-int -Werror=incompatible-pointer-types -Werror=int-conversion -Wvla -g -Og -fsanitize=address -fsanitize=undefined src/main.c -o main
+	gcc -std=c89 -DDEBUG -Wall -Wno-unknown-pragmas -Wpedantic -Wshadow -Wuninitialized -Wextra -Werror=implicit-int -Werror=incompatible-pointer-types -Werror=int-conversion -Wvla -g -Og -fsanitize=address -fsanitize=undefined $AUSRA_DIR/main.c -o $AUSRA_DIR/main
 	;;
 tcc)
 	# RPi
-	tcc -Wall src/main.c -o main
+	tcc -Wall $AUSRA_DIR/main.c -o $AUSRA_DIR/main
 	;;
 pcc)
 	# Plan9
-	pcc src/main.c -o main
+	pcc $AUSRA_DIR/main.c -o $AUSRA_DIR/main
 	;;
 esac
 
 # Valgrind
 if [ $VALGRIND ]; then
 	echo "running valgrind"
-	valgrind ./main
+	valgrind $AUSRA_DIR/main
 fi
 
 # Build Size
-echo "$(du -b ./main | cut -f1) bytes written"
+echo "$(du -b $AUSRA_DIR/main | cut -f1) bytes written"
+
+# Separator before running main
+echo "-------------"
 
 # Run
-./main
+$AUSRA_DIR/main
 
 # Cleanup
-rm -f ./main
+rm -f $AUSRA_DIR/main
