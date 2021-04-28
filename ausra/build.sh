@@ -34,7 +34,7 @@ rm -f $AUSRA_DIR/main
 rm -rf dist
 mkdir dist
 
-cp -a public/* dist
+cp -a static/* dist
 
 echo "using $COMPILER compiler"
 
@@ -66,7 +66,6 @@ fi
 # Build Size
 echo "$(du -b $AUSRA_DIR/main | cut -f1) bytes written"
 
-# Separator before running main
 echo "-------------"
 
 # Run
