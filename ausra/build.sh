@@ -1,5 +1,5 @@
 #!/bin/bash
-. ./getoptions.sh
+. $(dirname $0)/getoptions.sh
 
 parser_definition() {
 	prog=${2:?The program name is not set}
@@ -25,29 +25,29 @@ fi
 
 # Cleanup
 rm -f ./main
-rm -rf ../dist
-mkdir ../dist
+rm -rf dist
+mkdir dist
 
-cp -a ../public/* ../dist
+cp -a public/* dist
 
 echo "using $COMPILER compiler"
 
 case $COMPILER in
 gcc)
 	# Linux(fast)
-	cc main.c -std=c89 -Os -DNDEBUG -g0 -s -Wall -Wno-unknown-pragmas -o main
+	cc src/main.c -std=c89 -Os -DNDEBUG -g0 -s -Wall -Wno-unknown-pragmas -o main
 	;;
 gcc-debug)
 	# Linux(debug)
-	cc -std=c89 -DDEBUG -Wall -Wno-unknown-pragmas -Wpedantic -Wshadow -Wuninitialized -Wextra -Werror=implicit-int -Werror=incompatible-pointer-types -Werror=int-conversion -Wvla -g -Og -fsanitize=address -fsanitize=undefined main.c -o main
+	cc -std=c89 -DDEBUG -Wall -Wno-unknown-pragmas -Wpedantic -Wshadow -Wuninitialized -Wextra -Werror=implicit-int -Werror=incompatible-pointer-types -Werror=int-conversion -Wvla -g -Og -fsanitize=address -fsanitize=undefined src/main.c -o main
 	;;
 tcc)
 	# RPi
-	tcc -Wall main.c -o main
+	tcc -Wall src/main.c -o main
 	;;
 pcc)
 	# Plan9
-	pcc main.c -o main
+	pcc src/main.c -o main
 	;;
 esac
 
