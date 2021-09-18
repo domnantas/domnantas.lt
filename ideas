@@ -1,0 +1,39 @@
+i need a space to
+- take notes
+- write about my projects for future reference
+- share knowledge with others
+
+subjective requirements
+- minimal
+- custom built (no frameworks, no third party CMS)
+- git based
+- content must be parseable
+- easily editable on any device (should replace notes app on my phone)
+- content is not chronological, can be updated at any time
+- should be easy to see latest updates
+- should not depend on any third party services
+
+content
+- text
+- images
+- videos
+- code
+
+things to consider:
+- media processing (image resizing for srcset)
+- build step will still be required, maybe github actions/netlify build is ok
+- static site generator should be a separate project - how to publish it
+
+markdown
++ parseable
++ easy to edit
+- difficult to customize
+
+html partials https://github.com/hundredrabbits/100r.co/tree/master/src/inc
++ highly customizable
++ easy to understand
++ parseable
+
+inspiration
+- https://100r.co/
+- https://wiki.xxiivv.com/site/home.html
