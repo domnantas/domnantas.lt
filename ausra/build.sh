@@ -41,7 +41,7 @@ echo "using $COMPILER compiler"
 case $COMPILER in
 gcc)
 	# Linux(fast)
-	gcc -std=c89 -Os -DNDEBUG -g0 -s -Wall -Wno-unknown-pragmas $AUSRA_DIR/main.c -o $AUSRA_DIR/main
+	gcc -std=c89 -Os -DNDEBUG -g0 -Wall -Wno-unknown-pragmas $AUSRA_DIR/main.c -o $AUSRA_DIR/main
 	;;
 gcc-debug)
 	# Linux(debug)
@@ -62,9 +62,6 @@ if [ $VALGRIND ]; then
 	echo "running valgrind"
 	valgrind $AUSRA_DIR/main
 fi
-
-# Build Size
-echo "$(du -b $AUSRA_DIR/main | cut -f1) bytes written"
 
 echo "-------------"
 
