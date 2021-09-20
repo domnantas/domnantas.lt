@@ -13,12 +13,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-haskell@v1
+    - uses: haskell/actions/setup@v1
+    - name: build
+      run: runhaskell build.hs
+    - name: deploy to github pages
+      uses: peaceiris/actions-gh-pages@v3.7.3
       with:
-        ghc-version: '8.10.3'
-        cabal-version: '3.2'
-
-    - name: Build
-      run: |
-        ghc -o build build.hs
-        ./build
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: dist
+        cname: domnantas.lt
