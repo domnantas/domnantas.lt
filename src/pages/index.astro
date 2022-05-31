@@ -1,30 +1,79 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
+import BaseHead from '@/components/BaseHead.astro';
 
 const title = 'domnantas';
 const description = "Domantas Petrauskas is a lead frontend engineer and a pilot based in Lithuania. Building applications and teams.";
 const permalink = 'https://domnantas.lt/';
 ---
 
+<style>
+	.welcome-section {
+		height: 100vh;
+		display: grid;
+		place-items: center;
+		background-color: var(--color-background);
+		color: var(--color-text);
+		position: relative;
+	}
+
+	.card {
+		padding: 40px 80px;
+		z-index: 1;
+		background-color: hsla(0, 0%, 100%, 0.1);
+		backdrop-filter: blur(10px) saturate(150%);
+		border-radius: 20px;
+	}
+
+	.background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+</style>
 <html lang="en">
 
 <head>
 	<BaseHead title={title} description={description} permalink={permalink} />
-	<style>
-		html {
-			height: 100%;
-		}
-
-		body {
-			display: grid;
-			place-items: center;
-			height: 100%;
-		}
-	</style>
 </head>
 
 <body>
-	coming soon
+	<div class="welcome-section">
+		<svg class="background" viewBox="0 0 900 600" preserveAspectRatio="xMidYMin slice"
+			xmlns="http://www.w3.org/2000/svg">
+			<path
+				d="M900 513.8c-69.7-12.5-139.4-25.1-187.1-62-47.8-37-73.5-98.3-124-140.7-50.5-42.4-125.7-65.8-163.6-114.5C387.4 147.9 386.8 74 386.2 0H900Z"
+				fill="#232745" />
+			<path
+				d="M900 385.3c-52.3-9.4-104.5-18.8-140.3-46.5-35.9-27.7-55.2-73.7-93-105.5-37.9-31.7-94.3-49.3-122.7-85.8-28.4-36.6-28.9-92-29.3-147.5H900Z"
+				fill="#96446e" />
+			<path
+				d="M900 256.9c-34.8-6.3-69.7-12.5-93.6-31-23.8-18.5-36.7-49.1-62-70.3-25.2-21.2-62.8-32.9-81.7-57.3C643.7 74 643.4 37 643.1 0H900Z"
+				fill="#f17c53" />
+			<path
+				d="M900 128.4c-17.4-3.1-34.8-6.2-46.8-15.5-11.9-9.2-18.4-24.5-31-35.1-12.6-10.6-31.4-16.5-40.9-28.6-9.4-12.2-9.6-30.7-9.7-49.2H900Z"
+				fill="#fbae3c" />
+			<g>
+				<path
+					d="M0 86.2c70.2 5.7 140.3 11.4 195.6 41.7 55.2 30.3 95.4 85.2 143.8 132.7 48.4 47.5 104.9 87.5 135.3 142.8 30.4 55.3 34.7 126 39.1 196.6H0Z"
+					fill="#232745" />
+				<path
+					d="M0 214.7c52.6 4.2 105.3 8.5 146.7 31.2 41.4 22.8 71.6 63.9 107.9 99.5C290.8 381 333.2 411 356 452.5 378.8 494 382.1 547 385.3 600H0Z"
+					fill="#96446e" />
+				<path
+					d="M0 343.1c35.1 2.9 70.2 5.7 97.8 20.8 27.6 15.2 47.7 42.7 71.9 66.4 24.2 23.7 52.4 43.7 67.6 71.4 15.2 27.7 17.4 63 19.6 98.3H0Z"
+					fill="#f17c53" />
+				<path
+					d="M0 471.6c17.5 1.4 35.1 2.8 48.9 10.4 13.8 7.6 23.9 21.3 36 33.1 12 11.9 26.2 21.9 33.8 35.7 7.6 13.9 8.7 31.5 9.7 49.2H0Z"
+					fill="#fbae3c" />
+			</g>
+		</svg>
+		<div class="card">
+			<h1>Domantas Petrauskas</h1>
+			<h2>Frontend engineer / Team lead / Pilot</h2>
+		</div>
+	</div>
 </body>
 
 </html>
