@@ -1,0 +1,11 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-family: var(--font-body);
+}
+
+body {
+	margin: 0;
+}
