@@ -6,6 +6,12 @@ html {
 	font-family: var(--font-body);
 }
 
-body {
+body,
+h1,
+h2 {
 	margin: 0;
+}
+
+a {
+	color: var(--color-text);
 }

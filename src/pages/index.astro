@@ -17,11 +17,24 @@ const permalink = 'https://domnantas.lt/';
 	}
 
 	.card {
-		padding: 40px 80px;
+		margin: 16px;
+		padding: 32px 40px;
 		z-index: 1;
 		background-color: hsla(0, 0%, 100%, 0.1);
 		backdrop-filter: blur(10px) saturate(150%);
 		border-radius: 20px;
+	}
+
+	.card .name {
+		margin-bottom: 8px;
+	}
+
+	.card .roles {
+		margin-bottom: 16px;
+	}
+
+	.card .contact-details {
+		margin-bottom: 4px;
 	}
 
 	.background {
@@ -70,8 +83,17 @@ const permalink = 'https://domnantas.lt/';
 			</g>
 		</svg>
 		<div class="card">
-			<h1>Domantas Petrauskas</h1>
-			<h2>Frontend engineer / Team lead / Pilot</h2>
+			<h1 class="name">Domantas Petrauskas</h1>
+			<h2 class="roles">Frontend engineer / Team lead / Pilot</h2>
+			<div class="contact-details">
+				<a href="mailto:hello@domnantas.lt" target="_blank">hello@domnantas.lt</a>
+			</div>
+			<div class="contact-details">
+				Github: <a href="https://github.com/domnantas">@domnantas</a>
+			</div>
+			<div class="contact-details">
+				Twitter: <a href="https://twitter.com/domnantas">@domnantas</a>
+			</div>
 		</div>
 	</div>
 </body>
