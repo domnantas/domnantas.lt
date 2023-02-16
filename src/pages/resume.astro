@@ -2,8 +2,23 @@
 import Layout from '@/layouts/Layout.astro';
 ---
 
-<Layout title="resume">
-	<main>
-		hello
-	</main>
+<Layout title="resume" description="Domantas Petrauskas resume">
+	<div class="paper-wrapper">
+		<main class="paper">
+			
+		</main>
+	</div>
 </Layout>
+
+<style>
+	.paper-wrapper {
+		margin: 40px auto 0;
+		padding: 20px;
+	}
+	.paper {
+		max-width:  210mm;
+		min-height: 297mm;
+		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+		margin: 0 auto;
+	}
+</style>
