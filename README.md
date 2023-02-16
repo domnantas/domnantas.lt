@@ -1,21 +1,11 @@
 # [https://domnantas.lt](https://domnantas.lt)
 
-Blog built with [Astro](https://astro.build)
+Personal site built using [Astro](https://astro.build)
 
-## 🏗 Develop
+## 🧞 Commands
 
-```sh
-npm run dev
-```
-
-## 👀 Preview
-
-```sh
-npm run preview
-```
-
-## 🚀 Build
-
-```sh
-npm run build
-```
+| Command           | Action                                       |
+| :---------------- | :------------------------------------------- |
+| `npm run dev`     | Starts local dev server at `localhost:3000`  |
+| `npm run build`   | Build your production site to `./dist/`      |
+| `npm run preview` | Preview your build locally, before deploying |
