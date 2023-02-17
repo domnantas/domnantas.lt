@@ -4,7 +4,19 @@ import Layout from "@/layouts/Layout.astro";
 
 <Layout title="resume" description="Domantas Petrauskas resume">
 	<div class="paper-wrapper">
-		<main class="paper"></main>
+		<main class="paper">
+			<header>
+				<img class="profile-picture" src="/under-construction.jpg" alt="" />
+				<div class="contacts">
+					<p class="location">Vilnius, Lithuania</p>
+					<a href="mailto:hello@domnantas.lt">hello@domnantas.lt</a>
+					<a href="https://github.com/domnantas">https://github.com/domnantas</a
+					>
+					<a href="tel:+37063879622">+370 6 387 9622</a>
+				</div>
+			</header>
+			<h1>Domantas Petrauskas, Software Developer</h1>
+		</main>
 	</div>
 </Layout>
 
@@ -15,9 +27,35 @@ import Layout from "@/layouts/Layout.astro";
 	}
 
 	.paper {
-		max-width: 210mm;
+		max-width: 1000px;
 		min-height: 297mm;
 		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 		margin: 0 auto;
+		padding: 40px 24px;
+	}
+
+	.profile-picture {
+		width: 100%;
+		max-width: 120px;
+		max-height: 120px;
+		border-radius: 60px;
+		object-fit: cover;
+	}
+
+	@media (min-width: 768px) {
+		.paper {
+			padding: 60px;
+		}
+	}
+
+	@media print {
+		.paper-wrapper {
+			margin: 0;
+			padding: 0;
+		}
+
+		.paper {
+			box-shadow: none;
+		}
 	}
 </style>
