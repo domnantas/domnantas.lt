@@ -1,6 +1,7 @@
 {
-	"name": "nasty-neptune",
+	"name": "domnantas.lt",
 	"type": "module",
+	"private": true,
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "astro dev",
