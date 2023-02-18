@@ -6,7 +6,11 @@ import Layout from "@/layouts/Layout.astro";
 	<div class="paper-wrapper">
 		<main class="paper">
 			<header>
-				<img class="profile-picture" src="/under-construction.jpg" alt="" />
+				<img
+					class="profile-picture"
+					src="/profile-placeholder.jpg"
+					alt="A man's face"
+				/>
 				<div class="contacts">
 					<p class="location">Vilnius, Lithuania</p>
 					<a href="mailto:hello@domnantas.lt">hello@domnantas.lt</a>
@@ -40,6 +44,10 @@ import Layout from "@/layouts/Layout.astro";
 		max-height: 120px;
 		border-radius: 60px;
 		object-fit: cover;
+	}
+
+	.contacts {
+		display: grid;
 	}
 
 	@media (min-width: 768px) {
