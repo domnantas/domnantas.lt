@@ -19,33 +19,89 @@ import Layout from "@/layouts/Layout.astro";
 					>
 				</div>
 			</header>
-			<h1>Domantas Petrauskas,<br />Software Developer</h1>
-			<h4>Six years of building magical experiences on the web ✨</h4>
+			<h1 class="name">Domantas Petrauskas, Software Developer</h1>
+			<h2 class="subtitle">
+				Six years of building magical experiences on the web ✨
+			</h2>
 			<hr />
 			<h3 class="section-title">Work Experience</h3>
-			<h4>Zyro</h4>
-			<p><i>Frontend Developer and Team Lead, 2019 - Present</i></p>
-			<h4>Freelance</h4>
-			<p><i>Frontend Developer, Feb 2019 - Jun 2019</i></p>
-			<h4>New Code</h4>
-			<p><i>Frontend Developer, 2018 - 2019</i></p>
-			<h4>KEMDU</h4>
-			<p><i>Frontend Developer, 2017 - 2018</i></p>
+			<section>
+				<h4><a href="https://zyro.com">Zyro</a></h4>
+				<p>
+					<i>
+						Frontend Developer and Team Lead,
+						<span class="date">2019 - Present</span>
+					</i>
+				</p>
+				<ul>
+					<li>
+						Building a simple, yet powerful website builder using Vue, Nuxt, and
+						Node.js
+					</li>
+					<li>Leading 2-8 people, supporting their growth and performance</li>
+					<li>
+						Establishing interview process, evaluation guidelines and career
+						ladders
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h4>Freelance</h4>
+				<p>
+					<i>
+						Frontend Developer, <span class="date">Feb 2019 - Jun 2019</span>
+					</i>
+				</p>
+				<ul>
+					<li>
+						Marketing website for a UAV company using Gridsome and Forestry CMS
+					</li>
+					<li>Logistics management system frontend using React</li>
+				</ul>
+			</section>
+			<section>
+				<h4>New Code</h4>
+				<p>
+					<i>Frontend Developer, <span class="date">2018 - 2019</span></i>
+				</p>
+				<ul>
+					<li>Animation-heavy blockchain startup landing page using Nuxt</li>
+				</ul>
+			</section>
+			<section>
+				<h4>KEMDU</h4>
+				<p>
+					<i>Frontend Developer, <span class="date">2017 - 2018</span></i>
+				</p>
+				<ul>
+					<li>
+						Model management agency <a href="https://duomgmt.com"
+							>landing page</a
+						> using Vue and WordPress
+					</li>
+				</ul>
+			</section>
 			<hr />
 			<h3 class="section-title">Education</h3>
-			<h4>VILNIUS TECH</h4>
-			<p><i>Master of Aeronautical Engineering, 2016 - 2021</i></p>
+			<section>
+				<h4>VILNIUS TECH</h4>
+				<p>
+					<i>
+						Master of Aeronautical Engineering,
+						<span class="date">2016 - 2021</span>
+					</i>
+				</p>
+			</section>
 			<hr />
 			<h3 class="section-title">Skills</h3>
 			<ul>
 				<li>JavaScript, TypeScript, Elixir, Python, C/C++</li>
 				<li>Vue, React, Svelte</li>
 				<li>Next, Nuxt, Astro, Redwood, Gridsome, SvelteKit</li>
-				<li>Node, Deno, MySQL, Prisma, DevOps</li>
+				<li>Node.js, Deno, MySQL, Prisma, DevOps</li>
 				<li>Flutter, Swift</li>
 				<li>Jest, Mocha, Vitest, Cypress, Playwright</li>
 				<li>Mentoring, Hiring, Leadership</li>
-				<li>Livecoding visual performances</li>
 			</ul>
 			<p></p>
 		</main>
@@ -54,41 +110,66 @@ import Layout from "@/layouts/Layout.astro";
 
 <style>
 	.paper-wrapper {
-		margin: 40px auto 0;
-		padding: 20px;
+		margin: 0 auto;
+		padding: var(--space-m) var(--space-s);
 	}
 
 	.paper {
-		max-width: 1280px;
-		min-height: 297mm;
+		max-width: 940px;
 		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 		margin: 0 auto;
-		padding: 40px 24px;
+		padding: var(--space-m-l);
 	}
 
 	.profile-picture {
 		width: 100%;
-		max-width: 120px;
-		max-height: 120px;
+		max-width: 100px;
+		max-height: 100px;
 		border-radius: 60px;
 		object-fit: cover;
 	}
 
 	header {
 		display: grid;
-		row-gap: 24px;
-		margin-bottom: 24px;
+		row-gap: var(--space-m);
+		margin-bottom: var(--space-s);
 	}
 
 	.contacts {
 		display: grid;
 	}
 
-	@media (min-width: 768px) {
-		.paper {
-			padding: 60px;
-		}
+	.name {
+		margin-bottom: var(--space-2xs);
+		font-size: var(--step-3);
+	}
 
+	.subtitle {
+		font-size: var(--step-1);
+	}
+
+	hr {
+		margin: var(--space-xs) 0;
+	}
+
+	.section-title {
+		font-size: var(--step-0);
+		margin-bottom: var(--space-xs);
+	}
+
+	.date {
+		white-space: nowrap;
+	}
+
+	a {
+		color: var(--color-text);
+	}
+
+	section {
+		margin-bottom: var(--space-xs);
+	}
+
+	@media (min-width: 768px) {
 		header {
 			grid-template-columns: auto 1fr;
 			align-items: center;
@@ -119,6 +200,10 @@ import Layout from "@/layouts/Layout.astro";
 		.contacts {
 			justify-self: end;
 			text-align: right;
+		}
+
+		a {
+			text-decoration: none;
 		}
 	}
 </style>
