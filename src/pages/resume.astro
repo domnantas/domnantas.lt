@@ -25,7 +25,7 @@ import Layout from "@/layouts/Layout.astro";
 			</h2>
 			<hr />
 			<h3 class="section-title">Work Experience</h3>
-			<section>
+			<div class="workplace">
 				<h4><a href="https://zyro.com">Zyro</a></h4>
 				<p>
 					<i>
@@ -44,8 +44,8 @@ import Layout from "@/layouts/Layout.astro";
 						ladders
 					</li>
 				</ul>
-			</section>
-			<section>
+			</div>
+			<div class="workplace">
 				<h4>Freelance</h4>
 				<p>
 					<i>
@@ -58,8 +58,8 @@ import Layout from "@/layouts/Layout.astro";
 					</li>
 					<li>Logistics management system frontend using React</li>
 				</ul>
-			</section>
-			<section>
+			</div>
+			<div class="workplace">
 				<h4>New Code</h4>
 				<p>
 					<i>Frontend Developer, <span class="date">2018 - 2019</span></i>
@@ -67,8 +67,8 @@ import Layout from "@/layouts/Layout.astro";
 				<ul>
 					<li>Animation-heavy blockchain startup landing page using Nuxt</li>
 				</ul>
-			</section>
-			<section>
+			</div>
+			<div class="workplace">
 				<h4>KEMDU</h4>
 				<p>
 					<i>Frontend Developer, <span class="date">2017 - 2018</span></i>
@@ -80,7 +80,7 @@ import Layout from "@/layouts/Layout.astro";
 						> using Vue and WordPress
 					</li>
 				</ul>
-			</section>
+			</div>
 			<hr />
 			<h3 class="section-title">Education</h3>
 			<section>
@@ -109,6 +109,10 @@ import Layout from "@/layouts/Layout.astro";
 </Layout>
 
 <style>
+	a {
+		color: var(--color-text);
+	}
+
 	.paper-wrapper {
 		margin: 0 auto;
 		padding: var(--space-m) var(--space-s);
@@ -161,11 +165,7 @@ import Layout from "@/layouts/Layout.astro";
 		white-space: nowrap;
 	}
 
-	a {
-		color: var(--color-text);
-	}
-
-	section {
+	.workplace {
 		margin-bottom: var(--space-xs);
 	}
 
@@ -182,6 +182,10 @@ import Layout from "@/layouts/Layout.astro";
 	}
 
 	@media print {
+		a {
+			text-decoration: none;
+		}
+
 		.paper-wrapper {
 			margin: 0;
 			padding: 0;
@@ -200,10 +204,6 @@ import Layout from "@/layouts/Layout.astro";
 		.contacts {
 			justify-self: end;
 			text-align: right;
-		}
-
-		a {
-			text-decoration: none;
 		}
 	}
 </style>
