@@ -1,10 +1,7 @@
-* {
-	box-sizing: border-box;
-}
-
 body {
-	margin: 0;
 	font-family: var(--font-family-body);
+	font-size: var(--step-0);
+	line-height: 1.5;
 }
 
 h1,
@@ -14,4 +11,21 @@ h4,
 h5,
 h6 {
 	font-family: var(--font-family-heading);
+	line-height: 1.2;
+}
+
+h1 {
+	font-size: var(--step-4);
+}
+
+h2 {
+	font-size: var(--step-3);
+}
+
+h3 {
+	font-size: var(--step-2);
+}
+
+h4 {
+	font-size: var(--step-1);
 }

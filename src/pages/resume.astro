@@ -14,12 +14,40 @@ import Layout from "@/layouts/Layout.astro";
 				<div class="contacts">
 					<p class="location">Vilnius, Lithuania</p>
 					<a href="mailto:hello@domnantas.lt">hello@domnantas.lt</a>
+					<a href="tel:+37063879622">+370 6 387 9622</a>
 					<a href="https://github.com/domnantas">https://github.com/domnantas</a
 					>
-					<a href="tel:+37063879622">+370 6 387 9622</a>
 				</div>
 			</header>
-			<h1>Domantas Petrauskas, Software Developer</h1>
+			<h1>Domantas Petrauskas,<br />Software Developer</h1>
+			<h4>Six years of building magical experiences on the web ✨</h4>
+			<hr />
+			<h3 class="section-title">Work Experience</h3>
+			<h4>Zyro</h4>
+			<p><i>Frontend Developer and Team Lead, 2019 - Present</i></p>
+			<h4>Freelance</h4>
+			<p><i>Frontend Developer, Feb 2019 - Jun 2019</i></p>
+			<h4>New Code</h4>
+			<p><i>Frontend Developer, 2018 - 2019</i></p>
+			<h4>KEMDU</h4>
+			<p><i>Frontend Developer, 2017 - 2018</i></p>
+			<hr />
+			<h3 class="section-title">Education</h3>
+			<h4>VILNIUS TECH</h4>
+			<p><i>Master of Aeronautical Engineering, 2016 - 2021</i></p>
+			<hr />
+			<h3 class="section-title">Skills</h3>
+			<ul>
+				<li>JavaScript, TypeScript, Elixir, Python, C/C++</li>
+				<li>Vue, React, Svelte</li>
+				<li>Next, Nuxt, Astro, Redwood, Gridsome, SvelteKit</li>
+				<li>Node, Deno, MySQL, Prisma, DevOps</li>
+				<li>Flutter, Swift</li>
+				<li>Jest, Mocha, Vitest, Cypress, Playwright</li>
+				<li>Mentoring, Hiring, Leadership</li>
+				<li>Livecoding visual performances</li>
+			</ul>
+			<p></p>
 		</main>
 	</div>
 </Layout>
@@ -31,7 +59,7 @@ import Layout from "@/layouts/Layout.astro";
 	}
 
 	.paper {
-		max-width: 1000px;
+		max-width: 1280px;
 		min-height: 297mm;
 		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 		margin: 0 auto;
@@ -46,6 +74,12 @@ import Layout from "@/layouts/Layout.astro";
 		object-fit: cover;
 	}
 
+	header {
+		display: grid;
+		row-gap: 24px;
+		margin-bottom: 24px;
+	}
+
 	.contacts {
 		display: grid;
 	}
@@ -53,6 +87,16 @@ import Layout from "@/layouts/Layout.astro";
 	@media (min-width: 768px) {
 		.paper {
 			padding: 60px;
+		}
+
+		header {
+			grid-template-columns: auto 1fr;
+			align-items: center;
+		}
+
+		.contacts {
+			justify-self: end;
+			text-align: right;
 		}
 	}
 
@@ -64,6 +108,17 @@ import Layout from "@/layouts/Layout.astro";
 
 		.paper {
 			box-shadow: none;
+			padding: 0;
+		}
+
+		header {
+			grid-template-columns: auto 1fr;
+			align-items: center;
+		}
+
+		.contacts {
+			justify-self: end;
+			text-align: right;
 		}
 	}
 </style>
