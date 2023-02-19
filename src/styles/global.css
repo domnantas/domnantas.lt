@@ -31,3 +31,8 @@ h3 {
 h4 {
 	font-size: var(--step-1);
 }
+
+::selection {
+	background-color: var(--color-primary);
+	color: var(--color-background);
+}

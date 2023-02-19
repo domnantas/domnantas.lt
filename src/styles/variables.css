@@ -41,6 +41,16 @@
 	--space-s-l: clamp(1.13rem, calc(0.78rem + 1.72vw), 2.5rem);
 
 	/* Colors */
-	--color-text: hsl(222deg, 22%, 5%);
+	--primary-hue: 260;
+	--color-gray-100: hsl(0, 0%, 10%);
+	--color-gray-200: hsl(0, 0%, 25%);
+	--color-gray-300: hsl(0, 0%, 46%);
+	--color-gray-400: hsl(0, 0%, 83%);
+	--color-gray-500: hsl(0, 0%, 96%);
 	--color-background: hsl(0deg, 0%, 100%);
+	--color-text: hsl(var(--primary-hue), 100%, 9%);
+	--color-text-lighter: hsl(var(--primary-hue), 80%, 20%);
+	--color-primary: hsl(var(--primary-hue), 95%, 50%);
+	--color-complimentary-1: hsl(calc(var(--primary-hue) + 30), 95%, 50%);
+	--color-complimentary-2: hsl(calc(var(--primary-hue) + 60), 95%, 50%);
 }

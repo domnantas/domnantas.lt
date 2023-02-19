@@ -15,13 +15,13 @@ import Layout from "@/layouts/Layout.astro";
 					<p class="location">Vilnius, Lithuania</p>
 					<a href="mailto:hello@domnantas.lt">hello@domnantas.lt</a>
 					<a href="tel:+37063879622">+370 6 387 9622</a>
-					<a href="https://github.com/domnantas">https://github.com/domnantas</a
-					>
+					<a href="https://github.com/domnantas">github.com/domnantas</a>
 				</div>
 			</header>
 			<h1 class="name">Domantas Petrauskas, Software Developer</h1>
 			<h2 class="subtitle">
-				Six years of building magical experiences on the web ✨
+				Six years of building <span class="text-gradient">magical</span> experiences
+				on the web ✨
 			</h2>
 			<hr />
 			<h3 class="section-title">Work Experience</h3>
@@ -35,12 +35,14 @@ import Layout from "@/layouts/Layout.astro";
 				</p>
 				<ul>
 					<li>
-						Building a simple, yet powerful website builder using Vue, Nuxt, and
-						Node.js
+						Building an easy to use, yet powerful website builder using Vue,
+						Nuxt, and Node.js
 					</li>
-					<li>Leading 2-8 people, supporting their growth and performance</li>
 					<li>
-						Establishing interview process, evaluation guidelines and career
+						Leading a team of engineers, supporting their growth and performance
+					</li>
+					<li>
+						Designing interview process, evaluation guidelines and career
 						ladders
 					</li>
 				</ul>
@@ -54,7 +56,8 @@ import Layout from "@/layouts/Layout.astro";
 				</p>
 				<ul>
 					<li>
-						Marketing website for a UAV company using Gridsome and Forestry CMS
+						Launching a marketing website for a UAV company using Gridsome and
+						Forestry CMS
 					</li>
 					<li>Logistics management system frontend using React</li>
 				</ul>
@@ -71,7 +74,8 @@ import Layout from "@/layouts/Layout.astro";
 			<div class="workplace">
 				<h4>KEMDU</h4>
 				<p>
-					<i>Frontend Developer, <span class="date">2017 - 2018</span></i>
+					<i>Junior Frontend Developer, <span class="date">2017 - 2018</span></i
+					>
 				</p>
 				<ul>
 					<li>
@@ -95,13 +99,21 @@ import Layout from "@/layouts/Layout.astro";
 			<hr />
 			<h3 class="section-title">Skills</h3>
 			<ul>
-				<li>JavaScript, TypeScript, Elixir, Python, C/C++</li>
+				<li>
+					JavaScript, TypeScript, Elixir,
+					<span class="lighter">Python, C/C++</span>
+				</li>
 				<li>Vue, React, Svelte</li>
-				<li>Next, Nuxt, Astro, Redwood, Gridsome, SvelteKit</li>
+				<li>
+					Next.js, Nuxt, Astro, Redwood,
+					<span class="lighter"> Gridsome, SvelteKit</span>
+				</li>
 				<li>Node.js, Deno, MySQL, Prisma, DevOps</li>
-				<li>Flutter, Swift</li>
-				<li>Jest, Mocha, Vitest, Cypress, Playwright</li>
-				<li>Mentoring, Hiring, Leadership</li>
+				<li><span class="lighter">Flutter, Swift</span></li>
+				<li>
+					Jest, Mocha, Vitest, <span class="lighter">Cypress, Playwright</span>
+				</li>
+				<li>Mentoring, Hiring, <span class="lighter">Leadership</span></li>
 			</ul>
 			<p></p>
 		</main>
@@ -116,13 +128,24 @@ import Layout from "@/layouts/Layout.astro";
 	.paper-wrapper {
 		margin: 0 auto;
 		padding: var(--space-m) var(--space-s);
+		background: linear-gradient(
+				to bottom,
+				hsla(0, 0%, 100%, 1),
+				hsla(0, 0%, 100%, 0)
+			),
+			url("/resume-background.svg");
+		background-size: cover;
+		min-height: 100vh;
 	}
 
 	.paper {
 		max-width: 940px;
-		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+		box-shadow: 0 0.75rem 2rem 0 hsla(0, 0%, 0%, 0.1);
 		margin: 0 auto;
 		padding: var(--space-m-l);
+		background-color: hsla(0, 0%, 100%, 0.15);
+		backdrop-filter: blur(10px);
+		border-radius: 16px;
 	}
 
 	.profile-picture {
@@ -152,8 +175,22 @@ import Layout from "@/layouts/Layout.astro";
 		font-size: var(--step-1);
 	}
 
+	.text-gradient {
+		background-image: linear-gradient(
+			45deg,
+			var(--color-primary) 25%,
+			var(--color-complimentary-2)
+		);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		-moz-background-clip: text;
+		-moz-text-fill-color: transparent;
+	}
+
 	hr {
 		margin: var(--space-xs) 0;
+		border: none;
+		border-top: 1px solid var(--color-text);
 	}
 
 	.section-title {
@@ -167,6 +204,10 @@ import Layout from "@/layouts/Layout.astro";
 
 	.workplace {
 		margin-bottom: var(--space-xs);
+	}
+
+	.lighter {
+		opacity: 0.6;
 	}
 
 	@media (min-width: 768px) {
@@ -189,6 +230,7 @@ import Layout from "@/layouts/Layout.astro";
 		.paper-wrapper {
 			margin: 0;
 			padding: 0;
+			background: none;
 		}
 
 		.paper {
