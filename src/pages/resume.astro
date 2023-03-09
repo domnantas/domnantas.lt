@@ -247,6 +247,10 @@ import Layout from "@/layouts/Layout.astro";
 	}
 
 	@media print {
+		@page {
+			size: 940px 1329px;
+		}
+
 		a {
 			text-decoration: none;
 		}
@@ -270,6 +274,10 @@ import Layout from "@/layouts/Layout.astro";
 		header {
 			grid-template-columns: auto 1fr;
 			align-items: center;
+		}
+
+		.text-gradient {
+			print-color-adjust: exact;
 		}
 
 		.contacts {
