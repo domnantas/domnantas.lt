@@ -35,70 +35,117 @@ import Layout from "@/layouts/Layout.astro";
 				on the web
 			</h2>
 			<h3 class="section-title">Work Experience</h3>
-			<div class="workplace">
-				<h4><a href="https://zyro.com">Zyro</a></h4>
-				<p>
-					<span class="position">Frontend Developer and Team Lead</span>
-					<span class="date lighter">2019 - Present</span>
-				</p>
-				<ul class="experiences lighter">
-					<li>
-						Building an easy to use, yet powerful website builder using Vue,
-						Nuxt, and Node.js
-					</li>
-					<li>
-						Leading a team of engineers, supporting their growth and performance
-					</li>
-					<li>
-						Designing interview process, evaluation guidelines and career
-						ladders
-					</li>
-				</ul>
-			</div>
-			<div class="workplace">
-				<h4>Freelance</h4>
-				<p>
-					<span class="position">Frontend Developer</span>
-					<span class="date lighter">Feb 2019 - Jun 2019</span>
-				</p>
-				<ul class="experiences lighter">
-					<li>
-						Launching a marketing website for a UAV company using Gridsome and
-						Forestry CMS
-					</li>
-					<li>Logistics management system frontend using React</li>
-				</ul>
-			</div>
-			<div class="workplace">
-				<h4>New Code</h4>
-				<p>
-					<span class="position">Frontend Developer</span>
-					<span class="date lighter">2018 - 2019</span>
-				</p>
-				<ul class="experiences lighter">
-					<li>Animation-heavy blockchain startup landing page using Nuxt</li>
-				</ul>
-			</div>
-			<div class="workplace">
-				<h4>KEMDU</h4>
-				<p>
-					<span class="position">Junior Frontend Developer</span>
-					<span class="date lighter">2017 - 2018</span>
-				</p>
-				<ul class="experiences lighter">
-					<li>
-						Model management agency
-						<a href="https://duomgmt.com">landing page</a> using Vue and WordPress
-					</li>
-				</ul>
+			<div class="workplaces">
+				<div class="workplace">
+					<h4><a href="https://zyro.com">Zyro</a></h4>
+					<p>
+						<span class="position">Frontend Developer and Team Lead</span>
+						<span class="date lighter">2019 - Present</span>
+					</p>
+					<ul class="experiences lighter">
+						<li>
+							Building an easy to use, yet powerful website builder using Vue,
+							Nuxt, and Node.js
+						</li>
+						<li>
+							Leading a team of engineers, supporting their growth and
+							performance
+						</li>
+						<li>
+							Designing interview process, evaluation guidelines and career
+							ladders
+						</li>
+					</ul>
+				</div>
+				<div class="workplace">
+					<h4>Freelance</h4>
+					<p>
+						<span class="position">Frontend Developer</span>
+						<span class="date lighter">Feb 2019 - Jun 2019</span>
+					</p>
+					<ul class="experiences lighter">
+						<li>
+							Launching a marketing website for a UAV company using Gridsome and
+							Forestry CMS
+						</li>
+						<li>Logistics management system frontend using React</li>
+					</ul>
+				</div>
+				<div class="workplace">
+					<h4>New Code</h4>
+					<p>
+						<span class="position">Frontend Developer</span>
+						<span class="date lighter">2018 - 2019</span>
+					</p>
+					<ul class="experiences lighter">
+						<li>Animation-heavy blockchain startup landing page using Nuxt</li>
+					</ul>
+				</div>
+				<div class="workplace">
+					<h4>KEMDU</h4>
+					<p>
+						<span class="position">Junior Frontend Developer</span>
+						<span class="date lighter">2017 - 2018</span>
+					</p>
+					<ul class="experiences lighter">
+						<li>
+							Model management agency
+							<a href="https://duomgmt.com" target="_blank">landing page</a> using
+							Vue and WordPress
+						</li>
+					</ul>
+				</div>
 			</div>
 			<h3 class="section-title">Education</h3>
-			<div class="education-facility">
-				<h4>VILNIUS TECH</h4>
-				<p>
-					<span class="position">Master of Aeronautical Engineering</span>
-					<span class="date lighter">2016 - 2021</span>
-				</p>
+			<div class="education-facilities">
+				<div class="education-facility">
+					<h4>VILNIUS TECH</h4>
+					<p>
+						<span class="position">Master of Aeronautical Engineering</span>
+						<span class="date lighter">2016 - 2021</span>
+					</p>
+				</div>
+			</div>
+			<h3 class="section-title">Open Source</h3>
+			<div class="open-source-projects">
+				<div class="open-source-project">
+					<h4><a href="https://armanual.org" target="_blank">ARManual</a></h4>
+					<p>
+						<span class="project-description">
+							Amateur radio knowledge base. Author.
+						</span>
+						<span class="date lighter">Since 2018</span>
+					</p>
+				</div>
+				<div class="open-source-project">
+					<h4>
+						<a
+							href="https://github.com/domnantas/airplane-disco"
+							target="_blank"
+						>
+							Airplane Disco
+						</a>
+					</h4>
+					<p>
+						<span class="project-description">
+							Airplane Scatter prediction web app. Author.
+						</span>
+						<span class="date lighter">Since 2022</span>
+					</p>
+				</div>
+				<div class="open-source-project">
+					<h4>
+						<a href="https://github.com/eslint/eslint" target="_blank">
+							ESLint
+						</a>
+					</h4>
+					<p>
+						<span class="project-description">
+							JavaScript linter and formatter. Contributor.
+						</span>
+						<span class="date lighter">Since 2022</span>
+					</p>
+				</div>
 			</div>
 			<h3 class="section-title">Skills</h3>
 			<div class="skills">
@@ -212,7 +259,8 @@ import Layout from "@/layouts/Layout.astro";
 		margin-bottom: var(--space-xs);
 	}
 
-	.position {
+	.position,
+	.project-description {
 		margin-right: var(--space-2xs);
 	}
 
@@ -221,8 +269,11 @@ import Layout from "@/layouts/Layout.astro";
 		font-size: var(--step--1);
 	}
 
-	.workplace {
-		margin-bottom: var(--space-xs);
+	.workplaces,
+	.education-facilities,
+	.open-source-projects {
+		display: grid;
+		gap: var(--space-2xs);
 	}
 
 	.lighter {
@@ -250,7 +301,8 @@ import Layout from "@/layouts/Layout.astro";
 		}
 
 		.workplace,
-		.education-facility {
+		.education-facility,
+		.open-source-project {
 			display: grid;
 			grid-template-columns: 180px 1fr;
 		}
@@ -266,11 +318,7 @@ import Layout from "@/layouts/Layout.astro";
 
 	@media print {
 		body {
-			font-size: 16px;
-		}
-
-		a {
-			text-decoration: none;
+			font-size: 14px;
 		}
 
 		.paper-wrapper {
@@ -304,7 +352,8 @@ import Layout from "@/layouts/Layout.astro";
 		}
 
 		.workplace,
-		.education-facility {
+		.education-facility,
+		.open-source-project {
 			display: grid;
 			grid-template-columns: 180px 1fr;
 		}
