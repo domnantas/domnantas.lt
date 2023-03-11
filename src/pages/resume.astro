@@ -22,7 +22,7 @@ import Layout from "@/layouts/Layout.astro";
 					src="/profile-placeholder.jpg"
 					alt="A man's face"
 				/>
-				<div class="contacts">
+				<div class="contacts lighter">
 					<p class="location">Vilnius, Lithuania</p>
 					<a href="mailto:hello@domnantas.lt">hello@domnantas.lt</a>
 					<a href="tel:+37063879622">+370 6 387 9622</a>
@@ -38,12 +38,10 @@ import Layout from "@/layouts/Layout.astro";
 			<div class="workplace">
 				<h4><a href="https://zyro.com">Zyro</a></h4>
 				<p>
-					<i>
-						Frontend Developer and Team Lead,
-						<span class="date">2019 - Present</span>
-					</i>
+					<span class="position">Frontend Developer and Team Lead</span>
+					<span class="date lighter">2019 - Present</span>
 				</p>
-				<ul>
+				<ul class="experiences lighter">
 					<li>
 						Building an easy to use, yet powerful website builder using Vue,
 						Nuxt, and Node.js
@@ -60,11 +58,10 @@ import Layout from "@/layouts/Layout.astro";
 			<div class="workplace">
 				<h4>Freelance</h4>
 				<p>
-					<i>
-						Frontend Developer, <span class="date">Feb 2019 - Jun 2019</span>
-					</i>
+					<span class="position">Frontend Developer</span>
+					<span class="date lighter">Feb 2019 - Jun 2019</span>
 				</p>
-				<ul>
+				<ul class="experiences lighter">
 					<li>
 						Launching a marketing website for a UAV company using Gridsome and
 						Forestry CMS
@@ -75,23 +72,23 @@ import Layout from "@/layouts/Layout.astro";
 			<div class="workplace">
 				<h4>New Code</h4>
 				<p>
-					<i>Frontend Developer, <span class="date">2018 - 2019</span></i>
+					<span class="position">Frontend Developer</span>
+					<span class="date lighter">2018 - 2019</span>
 				</p>
-				<ul>
+				<ul class="experiences lighter">
 					<li>Animation-heavy blockchain startup landing page using Nuxt</li>
 				</ul>
 			</div>
 			<div class="workplace">
 				<h4>KEMDU</h4>
 				<p>
-					<i>Junior Frontend Developer, <span class="date">2017 - 2018</span></i
-					>
+					<span class="position">Junior Frontend Developer</span>
+					<span class="date lighter">2017 - 2018</span>
 				</p>
-				<ul>
+				<ul class="experiences lighter">
 					<li>
-						Model management agency <a href="https://duomgmt.com"
-							>landing page</a
-						> using Vue and WordPress
+						Model management agency
+						<a href="https://duomgmt.com">landing page</a> using Vue and WordPress
 					</li>
 				</ul>
 			</div>
@@ -99,10 +96,8 @@ import Layout from "@/layouts/Layout.astro";
 			<div class="education-facility">
 				<h4>VILNIUS TECH</h4>
 				<p>
-					<i>
-						Master of Aeronautical Engineering,
-						<span class="date">2016 - 2021</span>
-					</i>
+					<span class="position">Master of Aeronautical Engineering</span>
+					<span class="date lighter">2016 - 2021</span>
 				</p>
 			</div>
 			<h3 class="section-title">Skills</h3>
@@ -209,8 +204,13 @@ import Layout from "@/layouts/Layout.astro";
 		margin-bottom: var(--space-xs);
 	}
 
+	.position {
+		margin-right: var(--space-2xs);
+	}
+
 	.date {
 		white-space: nowrap;
+		font-size: var(--step--1);
 	}
 
 	.workplace {
