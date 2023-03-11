@@ -34,7 +34,6 @@ import Layout from "@/layouts/Layout.astro";
 				Six years of building <span class="text-gradient">magical</span> experiences
 				on the web ✨
 			</h2>
-			<hr />
 			<h3 class="section-title">Work Experience</h3>
 			<div class="workplace">
 				<h4><a href="https://zyro.com">Zyro</a></h4>
@@ -96,9 +95,8 @@ import Layout from "@/layouts/Layout.astro";
 					</li>
 				</ul>
 			</div>
-			<hr />
 			<h3 class="section-title">Education</h3>
-			<section>
+			<div class="education-facility">
 				<h4>VILNIUS TECH</h4>
 				<p>
 					<i>
@@ -106,8 +104,7 @@ import Layout from "@/layouts/Layout.astro";
 						<span class="date">2016 - 2021</span>
 					</i>
 				</p>
-			</section>
-			<hr />
+			</div>
 			<h3 class="section-title">Skills</h3>
 			<ul>
 				<li>
@@ -203,14 +200,6 @@ import Layout from "@/layouts/Layout.astro";
 		);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
-		-moz-background-clip: text;
-		-moz-text-fill-color: transparent;
-	}
-
-	hr {
-		margin: var(--space-xs) 0;
-		border: none;
-		border-top: 1px solid var(--color-text);
 	}
 
 	.section-title {
