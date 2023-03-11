@@ -101,24 +101,32 @@ import Layout from "@/layouts/Layout.astro";
 				</p>
 			</div>
 			<h3 class="section-title">Skills</h3>
-			<ul>
-				<li>
-					JavaScript, TypeScript, Elixir,
-					<span class="lighter">Python, C/C++</span>
-				</li>
-				<li>Vue, React, Svelte</li>
-				<li>
-					Next.js, Nuxt, Astro, Redwood,
-					<span class="lighter"> Gridsome, SvelteKit</span>
-				</li>
-				<li>Node.js, Deno, MySQL, Prisma, DevOps</li>
-				<li><span class="lighter">Flutter, Swift</span></li>
-				<li>
-					Jest, Mocha, Vitest, <span class="lighter">Playwright</span>
-				</li>
-				<li>Mentoring, Hiring, Leadership</li>
-			</ul>
-			<p></p>
+			<div class="skills">
+				<div class="skill-category">
+					<h4 class="skill-category-title">Languages</h4>
+					JavaScript, TypeScript, Elixir 💜, Python, C/C++
+				</div>
+				<div class="skill-category">
+					<h4 class="skill-category-title">Frontend</h4>
+					Vue, React, Svelte, Next.js, Nuxt, Astro, Redwood
+				</div>
+				<div class="skill-category">
+					<h4 class="skill-category-title">Backend</h4>
+					Node.js, Deno, MySQL, Prisma, DevOps
+				</div>
+				<div class="skill-category">
+					<h4 class="skill-category-title">Testing</h4>
+					Jest, Mocha, Vitest, Playwright
+				</div>
+				<div class="skill-category">
+					<h4 class="skill-category-title">Soft skills</h4>
+					Mentorship, Hiring, Leadership, Clear communication
+				</div>
+				<div class="skill-category">
+					<h4 class="skill-category-title">Curious about</h4>
+					Aviation, Sailing, Electronics, Swift, VR
+				</div>
+			</div>
 		</main>
 	</div>
 </Layout>
@@ -221,6 +229,15 @@ import Layout from "@/layouts/Layout.astro";
 		opacity: 0.7;
 	}
 
+	.skills {
+		display: grid;
+		gap: var(--space-s);
+	}
+
+	.skill-category-title {
+		font-size: var(--step-0);
+	}
+
 	@media (min-width: 768px) {
 		header {
 			grid-template-columns: auto 1fr;
@@ -241,11 +258,15 @@ import Layout from "@/layouts/Layout.astro";
 		.experiences {
 			grid-column-start: 2;
 		}
+
+		.skills {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
 	}
 
 	@media print {
 		body {
-			font-size: 14px;
+			font-size: 16px;
 		}
 
 		a {
@@ -290,6 +311,10 @@ import Layout from "@/layouts/Layout.astro";
 
 		.experiences {
 			grid-column-start: 2;
+		}
+
+		.skills {
+			grid-template-columns: 1fr 1fr 1fr;
 		}
 	}
 </style>
