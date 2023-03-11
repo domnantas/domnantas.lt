@@ -12,7 +12,7 @@
 	--step-5: clamp(2.49rem, calc(2.25rem + 1.18vw), 3.43rem);
 
 	--font-family-heading: "Nunito", sans-serif;
-	--font-family-body: "Poppins", sans-serif;
+	--font-family-body: "Nunito Sans", sans-serif;
 
 	/* Spacing */
 	/* @link https://utopia.fyi/space/calculator?c=320,18,1.2,1600,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
