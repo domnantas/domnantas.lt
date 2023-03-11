@@ -231,6 +231,16 @@ import Layout from "@/layouts/Layout.astro";
 			justify-self: end;
 			text-align: right;
 		}
+
+		.workplace,
+		.education-facility {
+			display: grid;
+			grid-template-columns: 180px 1fr;
+		}
+
+		.experiences {
+			grid-column-start: 2;
+		}
 	}
 
 	@media print {
@@ -270,6 +280,16 @@ import Layout from "@/layouts/Layout.astro";
 		.contacts {
 			justify-self: end;
 			text-align: right;
+		}
+
+		.workplace,
+		.education-facility {
+			display: grid;
+			grid-template-columns: 180px 1fr;
+		}
+
+		.experiences {
+			grid-column-start: 2;
 		}
 	}
 </style>
