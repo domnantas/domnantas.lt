@@ -1,0 +1,35 @@
+.wrapper {
+	position: relative;
+	display: inline-block;
+}
+
+.sparkleWrapper {
+	position: absolute;
+	pointer-events: none;
+	animation: scaleIn 0.35s alternate 2 forwards;
+}
+
+.sparkle {
+	transform-origin: center;
+	animation: rotate 1s linear forwards;
+}
+
+@keyframes scaleIn {
+	0% {
+		transform: translate(-50%, -50%) scale(0);
+	}
+
+	100% {
+		transform: translate(-50%, -50%) scale(1);
+	}
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(180deg);
+	}
+}
