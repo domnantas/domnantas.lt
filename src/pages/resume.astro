@@ -18,11 +18,11 @@ import Sparkles from "@/components/Sparkles.tsx";
 		<canvas id="gradient-canvas" data-transition-in></canvas>
 		<main class="paper">
 			<header>
-				<img
-					class="profile-picture"
-					src="/profile-placeholder.jpg"
-					alt="A man's face"
-				/>
+				<picture>
+					<source srcset="profile.webp" type="image/webp" />
+					<source srcset="profile.png" type="image/png" />
+					<img src="profile.png" alt="A man's face" class="profile-picture" />
+				</picture>
 				<div class="contacts lighter">
 					<p class="location">Vilnius, Lithuania</p>
 					<a href="mailto:hello@domnantas.lt">hello@domnantas.lt</a>
@@ -226,6 +226,30 @@ import Sparkles from "@/components/Sparkles.tsx";
 		max-height: 100px;
 		border-radius: 60px;
 		object-fit: cover;
+		background: linear-gradient(
+			45deg,
+			hsl(var(--primary-hue), 95%, 90%),
+			hsl(calc(var(--primary-hue) + 60), 95%, 90%)
+		);
+		animation: blob 20s infinite linear alternate;
+	}
+
+	@keyframes blob {
+		0% {
+			border-radius: 57% 43% 70% 30% / 44% 73% 27% 56%;
+		}
+		25% {
+			border-radius: 68% 42% 63% 37% / 36% 51% 49% 74%;
+		}
+		50% {
+			border-radius: 50% 50% 33% 67% / 43% 54% 46% 57%;
+		}
+		75% {
+			border-radius: 68% 32% 63% 37% / 40% 51% 49% 74%;
+		}
+		100% {
+			border-radius: 57% 43% 70% 50% / 44% 73% 37% 56%;
+		}
 	}
 
 	header {
