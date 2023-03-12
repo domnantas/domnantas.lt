@@ -1,5 +1,11 @@
 import styles from "./Sparkles.module.css";
-import { children, createEffect, createSignal, For } from "solid-js";
+import {
+	children,
+	createEffect,
+	createSignal,
+	For,
+	ParentProps,
+} from "solid-js";
 
 const random = (min: number, max: number) =>
 	Math.floor(Math.random() * (max - min)) + min;
@@ -35,7 +41,7 @@ const setRandomInterval = (
 	});
 };
 
-const Sparkles = (props) => {
+const Sparkles = (props: ParentProps) => {
 	const slot = children(() => props.children);
 
 	const [sparkles, setSparkles] = createSignal(
