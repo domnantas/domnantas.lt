@@ -4,7 +4,10 @@ import Layout from "@/layouts/Layout.astro";
 
 <Layout title="domnantas" description="Site under construction">
 	<main>
-		<h1>Still working on it</h1>
+		<div>
+			<h1>Still working on it</h1>
+			<h3 class="subtitle">but you can <a href="/resume">hire</a> me</h3>
+		</div>
 	</main>
 </Layout>
 
@@ -21,6 +24,11 @@ import Layout from "@/layouts/Layout.astro";
 	main {
 		display: grid;
 		place-items: center;
+		text-align: center;
 		height: 100%;
+	}
+
+	.subtitle {
+		margin-top: var(--space-s);
 	}
 </style>
