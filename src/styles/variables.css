@@ -42,6 +42,8 @@
 
 	/* Colors */
 	--primary-hue: 260;
+	--complimentary-1-hue: calc(var(--primary-hue) + 30);
+	--complimentary-2-hue: calc(var(--primary-hue) + 60);
 	--color-gray-100: hsl(0, 0%, 10%);
 	--color-gray-200: hsl(0, 0%, 25%);
 	--color-gray-300: hsl(0, 0%, 46%);
@@ -51,6 +53,6 @@
 	--color-text: hsl(var(--primary-hue), 100%, 9%);
 	--color-text-lighter: hsl(var(--primary-hue), 80%, 20%);
 	--color-primary: hsl(var(--primary-hue), 95%, 50%);
-	--color-complimentary-1: hsl(calc(var(--primary-hue) + 30), 95%, 50%);
-	--color-complimentary-2: hsl(calc(var(--primary-hue) + 60), 95%, 50%);
+	--color-complimentary-1: hsl(var(--complimentary-1-hue), 95%, 50%);
+	--color-complimentary-2: hsl(var(--complimentary-2-hue), 95%, 50%);
 }
