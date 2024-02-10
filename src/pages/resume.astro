@@ -55,10 +55,23 @@ import Sparkles from "@/components/Sparkles.tsx";
 			<h3 class="section-title">Work Experience</h3>
 			<div class="workplaces">
 				<div class="workplace">
+					<h4><a href="https://usbank.com">U.S. Bank</a></h4>
+					<p>
+						<span class="position">Senior Frontend Developer</span>
+						<span class="date lighter">2023 - Present</span>
+					</p>
+					<ul class="experiences lighter">
+						<li>
+							Working on a large ecommerce web application using React, Next.js
+							and TypeScript
+						</li>
+					</ul>
+				</div>
+				<div class="workplace">
 					<h4><a href="https://zyro.com">Zyro</a></h4>
 					<p>
 						<span class="position">Frontend Developer and Team Lead</span>
-						<span class="date lighter">2019 - Present</span>
+						<span class="date lighter">2019 - 2023</span>
 					</p>
 					<ul class="experiences lighter">
 						<li>
@@ -138,7 +151,7 @@ import Sparkles from "@/components/Sparkles.tsx";
 			<h3 class="section-title">Open Source</h3>
 			<div class="open-source-projects">
 				<div class="open-source-project">
-					<h4><a href="https://armanual.org" target="_blank">ARManual</a></h4>
+					<h4><a href="https://ham.guide" target="_blank">ham.guide</a></h4>
 					<p>
 						<span class="project-description">
 							Amateur radio knowledge base. Author.
@@ -180,11 +193,11 @@ import Sparkles from "@/components/Sparkles.tsx";
 			<div class="skills">
 				<div class="skill-category">
 					<h4 class="skill-category-title">Languages</h4>
-					JavaScript, TypeScript, Elixir 💜, Swift, Python, C/C++
+					JavaScript, TypeScript, Elixir, Swift, Python
 				</div>
 				<div class="skill-category">
 					<h4 class="skill-category-title">Frontend</h4>
-					Vue, React, Svelte, Next.js, Nuxt, Astro, Redwood
+					Vue, React, Svelte, Next.js, Nuxt, Astro
 				</div>
 				<div class="skill-category">
 					<h4 class="skill-category-title">Backend</h4>
@@ -402,6 +415,7 @@ import Sparkles from "@/components/Sparkles.tsx";
 	@media (prefers-color-scheme: dark) {
 		:root {
 			--color-text: hsl(var(--primary-hue), 100%, 91%);
+			--color-background: hsl(260, 9%, 13%);
 		}
 		.page-wrapper {
 			background: linear-gradient(
@@ -412,7 +426,7 @@ import Sparkles from "@/components/Sparkles.tsx";
 		}
 
 		#gradient-canvas {
-			--gradient-color-3: #201e24;
+			--gradient-color-3: var(--color-background);
 		}
 
 		.text-gradient {
@@ -431,7 +445,7 @@ import Sparkles from "@/components/Sparkles.tsx";
 
 	@media print {
 		body {
-			font-size: 14px;
+			font-size: 13px;
 		}
 
 		.page-wrapper {
@@ -478,6 +492,10 @@ import Sparkles from "@/components/Sparkles.tsx";
 
 		.skills {
 			grid-template-columns: 1fr 1fr 1fr;
+		}
+
+		.section-title {
+			margin-top: var(--space-m);
 		}
 	}
 </style>
