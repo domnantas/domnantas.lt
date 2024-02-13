@@ -13,7 +13,11 @@ import Sparkles from "@/components/Sparkles.tsx";
 	gradient.initGradient("#gradient-canvas");
 </script>
 
-<Layout title="Resume | domnantas.lt" description="Domantas Petrauskas resume">
+<Layout
+	title="Resume | domnantas.lt"
+	description="Domantas Petrauskas resume"
+	image="/resume-og.png"
+>
 	<div class="page-wrapper">
 		<canvas id="gradient-canvas" data-transition-in></canvas>
 		<a
@@ -445,10 +449,6 @@ import Sparkles from "@/components/Sparkles.tsx";
 	}
 
 	@media print {
-		body {
-			font-size: 12px;
-		}
-
 		.page-wrapper {
 			margin: 0;
 			padding: 0;

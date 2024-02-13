@@ -1,0 +1,160 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Sparkles from "@/components/Sparkles.tsx";
+---
+
+<script>
+	import { Gradient } from "./Gradient.js";
+
+	// Create your instance
+	const gradient = new Gradient();
+
+	// Call `initGradient` with the selector to your canvas
+	gradient.initGradient("#gradient-canvas");
+</script>
+
+<Layout title="OG" description="og">
+	<div class="page-wrapper">
+		<canvas id="gradient-canvas" data-transition-in></canvas>
+		<main class="paper">
+			<header>
+				<picture>
+					<source srcset="/profile.webp" type="image/webp" />
+					<source srcset="/profile.png" type="image/png" />
+					<img src="/profile.png" alt="A man's face" class="profile-picture" />
+				</picture>
+				<div class="contacts lighter">
+					<p class="location">Vilnius, Lithuania</p>
+					<a href="mailto:hello@domnantas.lt">hello@domnantas.lt</a>
+					<a href="tel:+37063879622">+370 6 387 9622</a>
+					<a href="https://github.com/domnantas">github.com/domnantas</a>
+				</div>
+			</header>
+			<h1 class="name">Domantas Petrauskas</h1>
+			<h2 class="subtitle">
+				Seven years of building <Sparkles client:load>
+					<span class="text-gradient">magical</span>
+				</Sparkles> experiences on the web
+			</h2>
+		</main>
+	</div>
+</Layout>
+
+<style>
+	html {
+		font-size: 26px;
+	}
+
+	.page-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: 0 auto;
+		padding: var(--space-xl);
+		background: linear-gradient(
+			to bottom,
+			hsla(0, 0%, 100%, 0.6),
+			hsla(0, 0%, 100%, 0)
+		);
+		background-size: cover;
+		min-height: 100vh;
+		position: relative;
+	}
+
+	#gradient-canvas {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		--gradient-color-1: #5706f9;
+		--gradient-color-2: #ec9cfc;
+		--gradient-color-3: #decffc;
+		--gradient-color-4: #f76ec9;
+	}
+
+	.paper {
+		width: 100%;
+		height: 100%;
+		flex-grow: 1;
+		box-shadow: 0 0.75rem 2rem 0 hsla(0, 0%, 0%, 0.1);
+		padding: var(--space-m-l);
+		background-color: hsla(0, 0%, 100%, 0.7);
+		backdrop-filter: blur(10px);
+		border-radius: 16px;
+	}
+
+	.profile-picture {
+		width: 100%;
+		max-width: 200px;
+		max-height: 200px;
+		border-radius: 60px;
+		object-fit: cover;
+		background: linear-gradient(
+			45deg,
+			hsl(var(--primary-hue), 95%, 90%),
+			hsl(calc(var(--primary-hue) + 60), 95%, 90%)
+		);
+		animation: blob 20s infinite linear alternate;
+	}
+
+	@keyframes blob {
+		0% {
+			border-radius: 57% 43% 70% 30% / 44% 73% 27% 56%;
+		}
+		25% {
+			border-radius: 68% 42% 63% 37% / 36% 51% 49% 74%;
+		}
+		50% {
+			border-radius: 50% 50% 33% 67% / 43% 54% 46% 57%;
+		}
+		75% {
+			border-radius: 68% 32% 63% 37% / 40% 51% 49% 74%;
+		}
+		100% {
+			border-radius: 57% 43% 70% 50% / 44% 73% 37% 56%;
+		}
+	}
+
+	header {
+		display: grid;
+		row-gap: var(--space-m);
+		margin-bottom: var(--space-s);
+		grid-template-columns: auto 1fr;
+		align-items: center;
+	}
+
+	.contacts {
+		display: grid;
+		justify-self: end;
+		justify-items: end;
+	}
+
+	.contacts a {
+		text-decoration: none;
+	}
+
+	.name {
+		margin-bottom: var(--space-2xs);
+		font-size: var(--step-3);
+	}
+
+	.subtitle {
+		font-size: var(--step-1);
+	}
+
+	.text-gradient {
+		background-image: linear-gradient(
+			45deg,
+			var(--color-primary) 25%,
+			var(--color-complimentary-2)
+		);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.lighter {
+		opacity: 0.7;
+	}
+</style>
