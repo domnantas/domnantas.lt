@@ -1,6 +1,12 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Sparkles from "@/components/Sparkles.tsx";
+import { toWords } from "number-to-words";
+
+const capitalize = (word: string) =>
+	word.charAt(0).toUpperCase() + word.slice(1);
+
+const yearsOfExperience = new Date().getFullYear() - 2017;
 ---
 
 <script>
@@ -52,7 +58,9 @@ import Sparkles from "@/components/Sparkles.tsx";
 			</header>
 			<h1 class="name">Domantas Vasiliauskas</h1>
 			<h2 class="subtitle">
-				Eight years of building <Sparkles client:load>
+				{capitalize(toWords(yearsOfExperience))} years of building <Sparkles
+					client:load
+				>
 					<span class="text-gradient">magical</span>
 				</Sparkles> experiences on the web
 			</h2>
