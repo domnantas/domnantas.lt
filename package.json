@@ -11,7 +11,8 @@
 		"astro": "astro",
 		"format": "prettier --write .",
 		"lint": "eslint --fix src",
-		"prepare": "husky"
+		"prepare": "husky",
+		"pdf": "node scripts/generate-pdf.mjs"
 	},
 	"dependencies": {
 		"@astrojs/solid-js": "^7.0.2",
@@ -29,6 +30,7 @@
 		"globals": "^17.12.0",
 		"husky": "^9.1.7",
 		"lint-staged": "^17.5.1",
+		"playwright-core": "^1.63.0",
 		"prettier": "^3.9.9",
 		"prettier-plugin-astro": "^1.0.1",
 		"typescript": "~6.0",
