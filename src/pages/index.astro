@@ -11,16 +11,6 @@ const capitalize = (word: string) =>
 const yearsOfExperience = new Date().getFullYear() - 2017;
 ---
 
-<script>
-	import { Gradient } from "./Gradient.js";
-
-	// Create your instance
-	const gradient = new Gradient();
-
-	// Call `initGradient` with the selector to your canvas
-	gradient.initGradient("#gradient-canvas");
-</script>
-
 <Layout
 	title="Resume | domnantas.lt"
 	description="Domantas Vasiliauskas resume"
@@ -41,7 +31,8 @@ const yearsOfExperience = new Date().getFullYear() - 2017;
 			>
 				<path
 					d="M11 40q-1.2 0-2.1-.9Q8 38.2 8 37v-7.15h3V37h26v-7.15h3V37q0 1.2-.9 2.1-.9.9-2.1.9Zm13-7.65-9.65-9.65 2.15-2.15 6 6V8h3v18.55l6-6 2.15 2.15Z"
-					fill="currentColor"></path>
+					fill="currentColor"
+				></path>
 			</svg>
 		</a>
 		<main class="paper">
@@ -60,16 +51,18 @@ const yearsOfExperience = new Date().getFullYear() - 2017;
 			</header>
 			<h1 class="name">Domantas Vasiliauskas</h1>
 			<h2 class="subtitle">
-				{capitalize(toWords.convert(yearsOfExperience))} years of building <Sparkles
-					client:load
-				>
+				{capitalize(toWords.convert(yearsOfExperience))} years of building{" "}
+				<Sparkles client:load>
 					<span class="text-gradient">magical</span>
-				</Sparkles> experiences on the web
+				</Sparkles>{" "}
+				experiences on the web
 			</h2>
 			<h3 class="section-title">Work Experience</h3>
 			<div class="workplaces">
 				<div class="workplace">
-					<h4><a href="https://www.dpgmediagroup.com">DPG Media</a></h4>
+					<h4>
+						<a href="https://www.dpgmediagroup.com">DPG Media</a>
+					</h4>
 					<p>
 						<span class="position">Senior Frontend Developer</span>
 						<span class="date lighter">2024 - Present</span>
@@ -87,7 +80,9 @@ const yearsOfExperience = new Date().getFullYear() - 2017;
 					</ul>
 				</div>
 				<div class="workplace">
-					<h4><a href="https://usbank.com">U.S. Bank</a></h4>
+					<h4>
+						<a href="https://usbank.com">U.S. Bank</a>
+					</h4>
 					<p>
 						<span class="position">Senior Frontend Developer</span>
 						<span class="date lighter">2023 - 2024</span>
@@ -101,7 +96,9 @@ const yearsOfExperience = new Date().getFullYear() - 2017;
 					</ul>
 				</div>
 				<div class="workplace">
-					<h4><a href="https://zyro.com">Zyro</a></h4>
+					<h4>
+						<a href="https://zyro.com">Zyro</a>
+					</h4>
 					<p>
 						<span class="position">Frontend Developer and Team Lead</span>
 						<span class="date lighter">2019 - 2023</span>
@@ -165,8 +162,10 @@ const yearsOfExperience = new Date().getFullYear() - 2017;
 					<ul class="experiences lighter">
 						<li>
 							Built a model management agency
-							<a href="https://duomgmt.com" target="_blank">landing page</a> using
-							Vue and WordPress
+							<a href="https://duomgmt.com" target="_blank">
+								landing page
+							</a>{" "}
+							using Vue and WordPress
 						</li>
 					</ul>
 				</div>
@@ -176,15 +175,28 @@ const yearsOfExperience = new Date().getFullYear() - 2017;
 				<div class="education-facility">
 					<h4>VILNIUS TECH</h4>
 					<p>
-						<span class="position"
-							>Master of Aeronautical Engineering + frozen ATPL</span
-						>
+						<span class="position">
+							Master of Aeronautical Engineering + frozen ATPL
+						</span>
 						<span class="date lighter">2016 - 2021</span>
 					</p>
 				</div>
 			</div>
 			<h3 class="section-title">Open Source</h3>
 			<div class="open-source-projects">
+				<div class="open-source-project">
+					<h4>
+						<a href="https://github.com/domnantas/wal-go" target="_blank">
+							WAL GO
+						</a>
+					</h4>
+					<p>
+						<span class="project-description">
+							Amateur radio augmented reality game. Author.
+						</span>
+						<span class="date lighter">2026</span>
+					</p>
+				</div>
 				<div class="open-source-project">
 					<h4>
 						<a href="https://bandplan.ham.guide" target="_blank">
@@ -199,28 +211,16 @@ const yearsOfExperience = new Date().getFullYear() - 2017;
 					</p>
 				</div>
 				<div class="open-source-project">
-					<h4><a href="https://ham.guide" target="_blank">ham.guide</a></h4>
+					<h4>
+						<a href="https://ham.guide" target="_blank">
+							ham.guide
+						</a>
+					</h4>
 					<p>
 						<span class="project-description">
 							Amateur radio knowledge base. Author.
 						</span>
 						<span class="date lighter">Since 2018</span>
-					</p>
-				</div>
-				<div class="open-source-project">
-					<h4>
-						<a
-							href="https://github.com/domnantas/airplane-disco"
-							target="_blank"
-						>
-							Airplane Disco
-						</a>
-					</h4>
-					<p>
-						<span class="project-description">
-							Airplane scatter prediction web app. Author.
-						</span>
-						<span class="date lighter">Since 2022</span>
 					</p>
 				</div>
 				<div class="open-source-project">
@@ -266,6 +266,15 @@ const yearsOfExperience = new Date().getFullYear() - 2017;
 			</div>
 		</main>
 	</div>
+	<script>
+		import { Gradient } from "@/scripts/Gradient.js";
+
+		// Create your instance
+		const gradient = new Gradient();
+
+		// Call `initGradient` with the selector to your canvas
+		gradient.initGradient("#gradient-canvas");
+	</script>
 </Layout>
 
 <style>

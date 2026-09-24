@@ -4,7 +4,7 @@ import {
 	createEffect,
 	createSignal,
 	For,
-	ParentProps,
+	type ParentProps,
 } from "solid-js";
 
 const random = (min: number, max: number) =>
@@ -28,14 +28,17 @@ const generateSparkle = (color = DEFAULT_COLOR) => ({
 const setRandomInterval = (
 	callback: any,
 	minDelay: number,
-	maxDelay: number
+	maxDelay: number,
 ) => {
 	createEffect(() => {
 		const tick = () => {
-			setTimeout(() => {
-				callback();
-				tick();
-			}, random(minDelay, maxDelay));
+			setTimeout(
+				() => {
+					callback();
+					tick();
+				},
+				random(minDelay, maxDelay),
+			);
 		};
 		tick();
 	});
@@ -45,7 +48,7 @@ const Sparkles = (props: ParentProps) => {
 	const slot = children(() => props.children);
 
 	const [sparkles, setSparkles] = createSignal(
-		range(3).map(() => generateSparkle())
+		range(3).map(() => generateSparkle()),
 	);
 
 	setRandomInterval(
@@ -60,7 +63,7 @@ const Sparkles = (props: ParentProps) => {
 			setSparkles([...validSparkles, generateSparkle()]);
 		},
 		50,
-		500
+		500,
 	);
 	return (
 		<span class={styles.wrapper}>
